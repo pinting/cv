@@ -189,21 +189,16 @@ strong {
 
 @media screen {
     body {
-        font-size: calc(80% + 1px);
+        font-size: clamp(0.875rem, 0.729vw, 1.75rem);
     }
 
     .top {
         max-width: min(clamp(1000px, 52.083vw, 2000px), 90%);
     }
 
-    @media (min-width: 2560px) {
-        body {
-            font-size: clamp(calc(80% + 1px), 0.719vw, calc(160% + 2px));
-        }
-        .avatar {
-            width: clamp(140px, 7.3vw, 280px);
-            height: clamp(140px, 7.3vw, 280px);
-        }
+    .avatar {
+        width: clamp(140px, 7.292vw, 280px);
+        height: clamp(140px, 7.292vw, 280px);
     }
 }
 
