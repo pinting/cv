@@ -187,6 +187,22 @@ strong {
     position: relative;
 }
 
+@media screen {
+    .top {
+        max-width: min(clamp(1000px, 52.083vw, 2000px), 90%);
+    }
+
+    @media (min-width: 2560px) {
+        body {
+            font-size: clamp(80%, 0.667vw, 160%);
+        }
+        .avatar {
+            width: clamp(140px, 7.3vw, 280px);
+            height: clamp(140px, 7.3vw, 280px);
+        }
+    }
+}
+
 .avatar {
     background: url(avatar.jpg) no-repeat center;
     background-size: cover;
