@@ -58,17 +58,17 @@ table {
 
 body {
     font-weight: 400;
-    font-size: 80%;
-    line-height: 1.5em;
+    font-size: 71%;
+    line-height: 1.35em;
     font-family: Verdana,sans-serif;
-    margin-top: 1em;
-    margin-left: 1em;
+    margin-top: 0;
+    margin-left: 0;
 }
 
 p {
     position: relative;
     left: 0;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.35em;
     margin-right: 0;
     width: 100%;
     break-inside: avoid;
@@ -93,8 +93,8 @@ code {
     position: relative;
     left: 0;
     width: 100%;
-    margin-bottom: 1.5em;
-    margin-top: -0.5em;
+    margin-bottom: 0.6em;
+    margin-top: -0.3em;
 }
 
 .contact-list div {
@@ -106,20 +106,20 @@ code {
     position: relative;
     left: 0;
     width: 100%;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.6em;
 }
 
 .reference-item ul {
     position: relative;
     left: 0;
     width: 100%;
-    margin-top: 0.5em;
+    margin-top: 0.3em;
     list-style: square;
     padding-left: 1.5em;
 }
 
 .reference-item li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
     text-align: justify;
 }
 
@@ -136,7 +136,7 @@ h1, h2, h3, h4 {
 
 h1 {
     text-align: left;
-    font-size: 3em;
+    font-size: 2.6em;
     line-height: 1em;
     position: relative;
     left: 0;
@@ -144,13 +144,13 @@ h1 {
 
 h1+.contact-list {
     font-style: italic;
-    font-size: 110%;
+    font-size: 105%;
 }
 
 h2 {
-    font-size: 1.1em;
-    margin-top: 3em;
-    margin-bottom: 1em;
+    font-size: 1.05em;
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
     position: relative;
     color: #333333;
     left: 0;
@@ -159,7 +159,7 @@ h2 {
 
 h3 {
     font-size: 1em;
-    margin-top: 1em;
+    margin-top: 0.6em;
     font-weight: 700;
 }
 
@@ -181,9 +181,9 @@ strong {
 }
 
 .top {
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
     width: 98%;
-    max-width: min(1300px, 90%);
+    max-width: min(1300px, 94%);
     position: relative;
 }
 
@@ -194,19 +194,20 @@ strong {
 
     .top {
         max-width: min(clamp(1000px, 52.083vw, 2000px), 90%);
+        margin-top: 20px;
     }
 
     .avatar {
-        width: clamp(140px, 7.292vw, 280px);
-        height: clamp(140px, 7.292vw, 280px);
+        width: clamp(100px, 5.5vw, 200px);
+        height: clamp(100px, 5.5vw, 200px);
     }
 }
 
 .avatar {
     background: url(avatar.jpg) no-repeat center;
     background-size: cover;
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     float: right;
     margin: 0;
     border-radius: 50%;
@@ -237,9 +238,22 @@ p:has(+ .reference-item) {
     page-break-after: avoid;
 }
 
+.about {
+    margin-top: 1.2em;
+}
+
+.compact-item {
+    margin-bottom: 0.3em;
+}
+
+.compact-item code {
+    display: inline;
+    margin-left: 0.5em;
+}
+
 @page {
     size: letter;
-    margin: 0.4in 0.2in 0.4in 0.2in;
+    margin: 0.3in 0.3in 0.3in 0.3in;
 }
     </style>
 </head>
@@ -265,39 +279,6 @@ p:has(+ .reference-item) {
             <p style="text-align: justify;">Since that summer, my passion for learning has never faded. I have experimented with various technologies, including cross-platform desktop applications, web applications, embedded applications, video-game projects, natural language processing (NLP) applications and algorithmic challenges.</p>
             <p style="text-align: justify;">Nowadays I am focusing on mathematics, building bicycles and writing open-source software.</p>
             <p style="text-align: justify;">Besides working, I am a Linux and FOSS enthusiast, in love with literature, music, theater and cinema.</p>
-            <!--
-                <h2>Education</h2>
-                <div class="item">
-                    <p>
-                        <strong>Eötvös Loránd University</strong>
-                        <code>Mathematics</code>
-                        <code>September 2026 –</code>
-                    </p>
-                    <div class="reference-item">
-                        Calculus, linear systems, complex numbers and polynomials, the arithmetic of integers, modular congruences, counting principles, recurrences and graph theory.
-                    </div>
-                </div>
-                <div class="item">
-                    <p>
-                        <strong>Babeș-Bolyai University</strong>
-                        <code>Philosophy</code>
-                        <code>September 2021 – February 2022</code>
-                    </p>
-                    <div class="reference-item">
-                        Western philosophy from the Pre-Socratics through the systematic frameworks of Plato and Aristotle, the theology of St. Augustine, jumping to the Early Modern epistemological turn, contrasting Cartesian dualism with Hume's empiricism before culminating in Kant's transcendental idealism. Explored contemporary philosophy by debating artificial consciousness via the Turing test and the Chinese Room Argument.
-                    </div>
-                </div>
-                <div class="item">
-                    <p>
-                        <strong>Budapest University of Technology and Economics</strong>
-                        <code>Software Engineering</code>
-                        <code>September 2015 – February 2017, September 2024 – February 2025</code>
-                    </p>
-                    <div class="reference-item">
-                        Computer architecture from low to high level: PC and CPU architecture (FPGA programming), assembly languages, responsibilities of operating systems (focusing on scheduling, memory management and file systems), user-space application design (on desktop, web and mobile platforms: C, C++, Java, C#, JavaScript), embedded application design (IoT), networking (IP, TCP, UDP, application layer protocols) and databases (SQL, NoSQL). Introduction to information theory: entropy, cryptography (RSA and ECC), error correction (block codes, CRCs, Hamming and Reed-Solomon codes). Introduction to artificial intelligence: search algorithms, first-order logic, machine learning (Bayesian networks, MDPs, NNs, CNNs and RNNs) and natural language processing (TF-IDF, Word2Vec, GloVe and Transformers).
-                    </div>
-                </div>
-            -->
             <h2>Open-Source</h2>
             <div class="item">
                 <p>
@@ -319,7 +300,7 @@ p:has(+ .reference-item) {
                     <code>August 2026 – </code>
                 </p>
                 <div class="reference-item">
-                    A <b>Horizon Europe</b> research project dedicated to investigating <i>executive aggrandizement in European democracies</i>, examining whether members of parliament act for their own benefit or represent the regions they speak for. Designed and implemented an automated data pipeline backed by a <i>centralized SQL database</i> to collect and organize parliamentary records across multiple election cycles: politician details and mandates, historical faction transitions, legislative bills, roll-call voting records, plenary speeches and governmental decrees.
+                    A <b>Horizon Europe</b> research project investigating <i>executive aggrandizement in European democracies</i>. Designed an automated data pipeline backed by a <i>centralized SQL database</i> to collect parliamentary records: politician details, mandates, faction transitions, legislative bills, roll-call voting records, plenary speeches and governmental decrees.
                 </div>
             </div>
             <div class="item">
@@ -330,11 +311,7 @@ p:has(+ .reference-item) {
                     <code>Presentations: <a href="https://alonsosilvaallende.github.io/automata-guided-generation">Structured code generation for domain-specific languages</a></code>
                 </p>
                 <div class="reference-item">
-                    <p>Returned to Nokia with the goal of continuing my research on LLMs and RAG systems in Riku Kaura-Aho's team. Established Project Octopus as a centralized project space for publishing and inner-sourcing NLP solutions across the company. Collaborated with various departments to streamline and reduce the internal chaos within R&D operations.</p>
-                    <p>Conducted research on a pipeline architecture inside PostgreSQL using PGRX to write extensions in Rust that minimized HTTP/1.1/SQL communication overhead between services. The design integrated chunking, embedding and retrieval into a single monolithic database process using fastembed and pgvector.</p>
-                    <p>Designed and implemented a microservice-based data warehouse megaproject along with a retrieval-augmented generation (RAG) pipeline composed of <i>a dozen independent Go microservices</i> that were coordinated through a shared PostgreSQL database. The most notable challenges were converting every incoming document to Markdown; writing a reusable TF-IDF library which validated documents and produced their sparse embeddings; implementing a chunking service which broke up text along natural language separators (between paragraphs, sentences or words); and figuring out the right architecture to universally support any dense embedding model, any vector database and any third-party front-end UI. The entire solution was deployed via Docker and used HTTP/1.1 and SQL for inter-service communication.</p>
-                    <p>Designed and implemented a repository of reusable Go packages for cross-project code sharing. The most notable packages were <i>archive</i>, which solved the algorithmically complex challenge of orchestrating multiple concurrent streams into a single stream, enabling parallel log collection from K8s nodes and on-the-fly merging of the incoming log streams into a single tape archive; and <i>httpdump</i>, which provided a transparent HTTP transport middleware for capturing, dumping and replaying HTTP network communication.</p>
-                    <p>Conducted research for Alonso Silva from <b>Bell Labs</b> on predictor machines for <i>enforcing grammatical and semantic constraints on domain-specific languages</i>.</p>
+                    <p>Defined <i>Project Octopus</i>, a centralized project space for inner-sourcing NLP solutions across the company — Designed a <i>PGRX based RAG architecture</i> using fastembed and pgvector, chunking / embedding / retrieval in a single DB process — Designed <i>an internal data warehouse project</i> built on a swarm of independent Go microservices processing noisy data, with a provider-agnostic interface architecture to support any dense embedding model, any database and any LLM frontend — Designed a reusable TF-IDF library for validation and sparse embedding generation — Designed concurrent K8s log stream orchestration into tape archives — Designed HTTP transport capture / replay middleware — Conducted <b>Bell Labs research</b> on predictor machines for enforcing grammatical and semantic constraints on DSLs.</p>
                 </div>
             </div>
             <div class="item">
@@ -343,38 +320,26 @@ p:has(+ .reference-item) {
                     <code>August 2023 – January 2024</code>
                 </p>
                 <div class="reference-item">
-                    <p>Designed and implemented a matchmaking system to connect local university graduates with local companies (in the Netherlands) by processing company websites and student theses to construct <i>an NxN similarity matrix</i> that described their likelihood of sharing a mutual interest.</p>
-                    <p>Beyond the main project, conducted code reviews, refined the company's CI/CD pipeline and refactored the existing user management architecture to support not only roles but also fine-grained per-user permissions by forking and pruning the AuthPermissions.AspNetCore library.</p>
+                    Designed a matchmaking system connecting university graduates with companies by processing websites and theses to construct <i>an NxN similarity matrix</i> — Refactored user management to support fine-grained permissions — Refined CI/CD pipelines.
                 </div>
             </div>
-            <div class="item">
+            <div class="compact-item">
                 <p>
                     <strong>Nokia Solutions and Networks Kft.</strong>
                     <code>March 2022 – June 2023</code>
                 </p>
-                <div class="reference-item">
-                    Designed and implemented (in Go using the K8s Operator SDK) an update orchestrator and an update receiver service to handle firmware rollouts for customer-owned hardware. Developed a MinIO-based firmware storage service with synchronization between regional data centers along with the implementation of HTTP range headers on S3 objects and client-side tools for managing firmware entries.
-                </div>
             </div>
-            <div class="item">
+            <div class="compact-item">
                 <p>
                     <strong>Accedo Broadband HU Kft.</strong>
                     <code>March 2018 – February 2021</code>
                 </p>
-                <div class="reference-item">
-                    <p>Contributed to the development of OTT client-side applications for webOS, Tizen and web platforms (for Yle, OSN, NRK, ProSieben, Deutsche Telekom and HBO) using JavaScript with an internally developed library and ReactJS. At peak, <i>supported 10 different applications</i> with bug fixes as a support engineer.</p>
-                    <p>Designed and implemented a real-time third-party API validator middleware between the application and the network layer; a containerized CI/CD toolset for Tizen and webOS; and an internal service operated inside Amazon AWS to synchronize Salesforce time tracking with the BambooHR calendar.</p>
-                </div>
             </div>
-            <div class="item">
+            <div class="compact-item">
                 <p>
                     <strong>Youwon Hungary Kft.</strong>
                     <code>July 2014 – May 2015</code>
                 </p>
-                <div class="reference-item">
-                    <p>Contributed to the development of an online second-hand marketplace using TypeScript and AngularJS on the client side, C# and ASP.NET Web API 4 on the server side and Entity Framework 6 for database management with Apache Lucene indexing.</p>
-                    <p>Designed and implemented a Facebook Messenger-like service using WebRTC and SignalR over the existing architecture: enabling audio/video calls, text messages along with their message history and the synchronization of ongoing conversation tabs across devices.</p>
-                </div>
             </div>
         </div>
     </div>
