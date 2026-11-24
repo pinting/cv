@@ -56,19 +56,16 @@ table {
     border-spacing: 0;
 }
 
+/* ===== Shared base styles ===== */
+
 body {
     font-weight: 400;
-    font-size: 71%;
-    line-height: 1.35em;
     font-family: Verdana,sans-serif;
-    margin-top: 0;
-    margin-left: 0;
 }
 
 p {
     position: relative;
     left: 0;
-    margin-bottom: 0.35em;
     margin-right: 0;
     width: 100%;
     break-inside: avoid;
@@ -93,8 +90,6 @@ code {
     position: relative;
     left: 0;
     width: 100%;
-    margin-bottom: 0.6em;
-    margin-top: -0.3em;
 }
 
 .contact-list div {
@@ -106,20 +101,17 @@ code {
     position: relative;
     left: 0;
     width: 100%;
-    margin-bottom: 0.6em;
 }
 
 .reference-item ul {
     position: relative;
     left: 0;
     width: 100%;
-    margin-top: 0.3em;
     list-style: square;
     padding-left: 1.5em;
 }
 
 .reference-item li {
-    margin-bottom: 0.3em;
     text-align: justify;
 }
 
@@ -130,27 +122,22 @@ code {
 
 h1, h2, h3, h4 {
     font-weight: 400;
-    font-family: Cousine,Verdana,sans-serif;
+    font-family: Cousine, Consolas, "Liberation Mono", Menlo, monospace;
     width: 100%;
 }
 
 h1 {
     text-align: left;
-    font-size: 2.6em;
     line-height: 1em;
-    position: relative;
-    left: -1px;
+    text-indent: -0.065em;
 }
 
 h1+.contact-list {
     font-style: italic;
-    font-size: 105%;
 }
 
 h2 {
     font-size: 1.1em;
-    margin-top: 1.0em;
-    margin-bottom: 0.9em;
     position: relative;
     color: #333333;
     left: 0;
@@ -159,7 +146,6 @@ h2 {
 
 h3 {
     font-size: 1em;
-    margin-top: 0.6em;
     font-weight: 700;
 }
 
@@ -181,33 +167,13 @@ strong {
 }
 
 .top {
-    margin: 0 auto;
     width: 98%;
-    max-width: min(1300px, 94%);
     position: relative;
-}
-
-@media screen {
-    body {
-        font-size: clamp(0.875rem, 0.729vw, 1.75rem);
-    }
-
-    .top {
-        max-width: min(clamp(1000px, 52.083vw, 2000px), 90%);
-        margin-top: 20px;
-    }
-
-    .avatar {
-        width: clamp(100px, 5.5vw, 200px);
-        height: clamp(100px, 5.5vw, 200px);
-    }
 }
 
 .avatar {
     background: url(avatar.jpg) no-repeat center;
     background-size: cover;
-    width: 110px;
-    height: 110px;
     float: right;
     margin: 0;
     border-radius: 50%;
@@ -238,22 +204,149 @@ p:has(+ .reference-item) {
     page-break-after: avoid;
 }
 
-.about {
-    margin-top: 1.2em;
+/* ===== Screen: spacious 173dc28d style ===== */
+
+@media screen {
+    body {
+        font-size: clamp(0.875rem, 0.729vw, 1.75rem);
+        line-height: 1.5em;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    p {
+        margin-bottom: 0.7em;
+    }
+
+    .contact-list {
+        margin-bottom: 1.5em;
+        margin-top: -0.5em;
+    }
+
+    .reference-item {
+        margin-bottom: 1.5em;
+    }
+
+    .reference-item ul {
+        margin-top: 0.5em;
+    }
+
+    .reference-item li {
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.4em;
+    }
+
+    h1+.contact-list {
+        font-size: 110%;
+    }
+
+    h2 {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    h3 {
+        margin-top: 1em;
+    }
+
+    .top {
+        margin: 20px auto 0 auto;
+        max-width: min(clamp(1000px, 52.083vw, 2000px), 90%);
+    }
+
+    .avatar {
+        width: clamp(140px, 7.292vw, 280px);
+        height: clamp(140px, 7.292vw, 280px);
+    }
+
+    .about {
+        margin-top: 1em;
+    }
 }
 
-.compact-item {
-    margin-bottom: 0.3em;
-}
+/* ===== Print: compact single-page style ===== */
 
-.compact-item code {
-    display: inline;
-    margin-left: 0.5em;
+@media print {
+    body {
+        font-size: 67.2%;
+        line-height: 1.42em;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    p {
+        margin-bottom: 0.3em;
+    }
+
+    .contact-list {
+        margin-bottom: 0.5em;
+        margin-top: -0.25em;
+    }
+
+    .reference-item {
+        margin-bottom: 0.46em;
+    }
+
+    .reference-item ul {
+        margin-top: 0.25em;
+    }
+
+    .reference-item li {
+        margin-bottom: 0.25em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h1+.contact-list {
+        font-size: 102%;
+    }
+
+    h2 {
+        margin-top: 0.9em;
+        margin-bottom: 0.65em;
+    }
+
+    h3 {
+        margin-top: 0.5em;
+    }
+
+    .top {
+        margin: 0 auto;
+        max-width: min(1300px, 94%);
+    }
+
+    .avatar {
+        width: 87px;
+        height: 87px;
+    }
+
+    .about {
+        margin-top: 0.9em;
+    }
+
+    /* Hide descriptions for print-compact jobs and style them inline */
+    .print-compact .reference-item {
+        display: none;
+    }
+
+    .print-compact {
+        margin-bottom: 0.31em;
+    }
+
+    .print-compact code {
+        display: inline;
+        margin-left: 0.5em;
+    }
 }
 
 @page {
     size: letter;
-    margin: 0.3in 0.3in 0.3in 0.3in;
+    margin: 0.35in 0.55in 0.3in 0.55in;
 }
     </style>
 </head>
@@ -287,9 +380,8 @@ p:has(+ .reference-item) {
                     <code>December 2025 –</code>
                 </p>
                 <div class="reference-item">
-                    <p>An SQL incremental parser and enforcer which <i>guarantees grammatical and semantical correctness for a subset of the language without any post-validation</i>. The performance-heavy operations are implemented in a Rust kernel and exposed to Python through PyO3, in which the light operations are written (expanding the grammatical tree of SQL and managing the semantic context).</p>
-                    <p>The parser is composed of the following layers: constants as token-level DFAs built by a single <i>Aho-Corasick tree of the vocabulary</i>; regular expressions as lazy DFAs over <i>Brzozowski derivatives</i>; exceptions of reserved keywords as differences of parallel DFAs; the grammar as an infinitely growing graph determinized on the fly as each DFA at acceptance expands into routes; and a semantic state machine which depends on a <i>GF(2) boolean algebra solver</i> and a <i>graph-based table import and join solver</i> for consistency enforcement (of fields, tables and their relations). The state machine supports query stacks, grouping, ordering, filtering and functions.</p>
-                    <p>The project initially used SageMath, but later the subset of its Graph and BooleanPolynomialRing modules were ported to Rust to ensure WASM compatibility.</p>
+                    <p>An SQL incremental parser and enforcer which guarantees grammatical and semantical correctness for a subset of the language without any post-validation.</p>
+                    <p>The parser is composed of the following layers: constants as token-level DFAs built by a single Aho-Corasick tree of the vocabulary; regular expressions as lazy DFAs over Brzozowski derivatives; exceptions of reserved keywords as differences of parallel DFAs; the grammar as an infinitely growing graph determinized on the fly as each DFA at acceptance expands into routes; and a semantic state machine which depends on a GF(2) boolean algebra solver and a graph-based table import and join solver for consistency enforcement (of fields, tables and their relations). The state machine supports query stacks, grouping, ordering, filtering and functions. The performance-heavy and language-independent operations are implemented in a Rust kernel and exposed to Python through PyO3.</p>
                 </div>
             </div>
             <h2>References</h2>
@@ -300,7 +392,7 @@ p:has(+ .reference-item) {
                     <code>August 2026 – </code>
                 </p>
                 <div class="reference-item">
-                    A <b>Horizon Europe</b> research project investigating <i>executive aggrandizement in European democracies</i>. Designed an automated data pipeline backed by a <i>centralized SQL database</i> to collect parliamentary records: politician details, mandates, faction transitions, legislative bills, roll-call voting records, plenary speeches and governmental decrees.
+                    A <b>Horizon Europe</b> research project investigating executive aggrandizement in European democracies. Designed an automated data pipeline backed by a centralized SQL database to collect parliamentary records: politician details, mandates, faction transitions, legislative bills, roll-call voting records, plenary speeches and governmental decrees.
                 </div>
             </div>
             <div class="item">
@@ -311,7 +403,7 @@ p:has(+ .reference-item) {
                     <code>Presentations: <a href="https://alonsosilvaallende.github.io/automata-guided-generation">Structured code generation for domain-specific languages</a></code>
                 </p>
                 <div class="reference-item">
-                    <p>Defined <i>Project Octopus</i>, a centralized project space for inner-sourcing NLP solutions across the company — Designed a <i>PGRX based RAG architecture</i> using fastembed and pgvector, chunking / embedding / retrieval in a single DB process — Designed <i>an internal data warehouse project</i> built on a swarm of independent Go microservices processing noisy data, with a provider-agnostic interface architecture to support any dense embedding model, any database and any LLM frontend — Designed a reusable TF-IDF library for validation and sparse embedding generation — Designed concurrent K8s log stream orchestration into tape archives — Designed HTTP transport capture / replay middleware — Conducted <b>Bell Labs research</b> on predictor machines for enforcing grammatical and semantic constraints on DSLs.</p>
+                    <p>Defined Project Octopus, a centralized project space for inner-sourcing NLP solutions across the company — Designed a PGRX based RAG architecture using fastembed and pgvector, chunking / embedding / retrieval in a single DB process — Designed an internal data warehouse project built on a swarm of independent Go microservices processing noisy data from multiply sources, with a provider-agnostic interface architecture to support any embedding model, any vector database and any LLM frontend — Designed a reusable TF-IDF library for validation and embedding — Designed concurrent K8s log stream orchestration into tape archives — Designed HTTP transport capture / replay middleware — Conducted research for <b>Bell Labs</b> on predictor machines, exploring how to enforce grammar and semantics on DSLs.</p>
                 </div>
             </div>
             <div class="item">
@@ -320,26 +412,35 @@ p:has(+ .reference-item) {
                     <code>August 2023 – January 2024</code>
                 </p>
                 <div class="reference-item">
-                    Designed a matchmaking system connecting university graduates with companies by processing websites and theses to construct <i>an NxN similarity matrix</i> — Refactored user management to support fine-grained permissions — Refined CI/CD pipelines.
+                    Designed a matchmaking system connecting university graduates with companies by processing websites and theses to construct an NxN similarity matrix — Refactored user management to support fine-grained permissions — Refined CI/CD pipelines.
                 </div>
             </div>
-            <div class="compact-item">
+            <div class="item print-compact">
                 <p>
                     <strong>Nokia Solutions and Networks Kft.</strong>
                     <code>March 2022 – June 2023</code>
                 </p>
+                <div class="reference-item">
+                    Designed a K8s-based firmware update orchestrator in Go using the Operator SDK to handle rollouts for customer-owned hardware — Developed a MinIO-backed firmware storage service with synchronization across regional data centers and HTTP range headers on S3 objects — Built client-side tooling for managing firmware entries.
+                </div>
             </div>
-            <div class="compact-item">
+            <div class="item print-compact">
                 <p>
                     <strong>Accedo Broadband HU Kft.</strong>
                     <code>March 2018 – February 2021</code>
                 </p>
+                <div class="reference-item">
+                    Developed OTT client-side applications for webOS, Tizen and web platforms (Yle, OSN, NRK, ProSieben, Deutsche Telekom, HBO) using JavaScript and ReactJS — At peak, supported 10 different applications as a support engineer — Designed a real-time third-party API validator middleware — Built containerized CI/CD toolsets for Tizen and webOS — Designed an AWS service synchronizing Salesforce time tracking with the BambooHR calendar.
+                </div>
             </div>
-            <div class="compact-item">
+            <div class="item print-compact">
                 <p>
                     <strong>Youwon Hungary Kft.</strong>
                     <code>July 2014 – May 2015</code>
                 </p>
+                <div class="reference-item">
+                    Developed an online second-hand marketplace using TypeScript, AngularJS, C#, ASP.NET Web API 4 and Entity Framework 6 with Apache Lucene indexing — Designed a Facebook Messenger-like service using WebRTC and SignalR: audio/video calls, text messaging with history and cross-device tab synchronization.
+                </div>
             </div>
         </div>
     </div>
