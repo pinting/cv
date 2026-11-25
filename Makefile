@@ -1,6 +1,7 @@
 SRC              = index.html
 TARGET           = index.pdf
 ASSETS           = avatar.jpg
+FONTS_CONF       = fonts.conf
 WEASYPRINT      ?= weasyprint
 WEASYPRINT_FLAGS = --optimize-images
 
@@ -14,9 +15,19 @@ check-deps:
 		echo "Install with: sudo pacman -S python-weasyprint" >&2; \
 		exit 1; \
 	}
+	@FONTCONFIG_FILE="$(CURDIR)/$(FONTS_CONF)" fc-list : family | grep -q "FreeSans" || { \
+		echo "Error: 'FreeSans' font was not found." >&2; \
+		echo "Install with: sudo pacman -S gnu-free-fonts" >&2; \
+		exit 1; \
+	}
+	@FONTCONFIG_FILE="$(CURDIR)/$(FONTS_CONF)" fc-list : family | grep -q "Liberation Mono" || { \
+		echo "Error: 'Liberation Mono' font was not found." >&2; \
+		echo "Install with: sudo pacman -S ttf-liberation" >&2; \
+		exit 1; \
+	}
 
-$(TARGET): $(SRC) $(ASSETS) Makefile | check-deps
-	$(WEASYPRINT) $(WEASYPRINT_FLAGS) $(SRC) $(TARGET)
+$(TARGET): $(SRC) $(ASSETS) $(FONTS_CONF) Makefile | check-deps
+	FONTCONFIG_FILE="$(CURDIR)/$(FONTS_CONF)" $(WEASYPRINT) $(WEASYPRINT_FLAGS) $(SRC) $(TARGET)
 
 view: $(TARGET)
 	@if command -v xdg-open >/dev/null 2>&1; then \

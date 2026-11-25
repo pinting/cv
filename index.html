@@ -56,8 +56,6 @@ table {
     border-spacing: 0;
 }
 
-/* ===== Shared base styles ===== */
-
 body {
     font-weight: 400;
     font-family: Verdana,sans-serif;
@@ -204,14 +202,11 @@ p:has(+ .reference-item) {
     page-break-after: avoid;
 }
 
-/* ===== Screen: spacious 173dc28d style ===== */
-
 @media screen {
     body {
         font-size: clamp(0.875rem, 0.729vw, 1.75rem);
         line-height: 1.5em;
-        margin-top: 1em;
-        margin-left: 1em;
+        margin: 0 0 2em 0;
     }
 
     p {
@@ -265,12 +260,30 @@ p:has(+ .reference-item) {
     .about {
         margin-top: 1em;
     }
-}
 
-/* ===== Print: compact single-page style ===== */
+    @media (max-width: 768px) {
+        .top {
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
+        .avatar {
+            float: none;
+            display: block;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+            text-indent: 0;
+        }
+    }
+}
 
 @media print {
     body {
+        font-family: FreeSans, sans-serif;
         font-size: 67.2%;
         line-height: 1.42em;
         margin-top: 0;
@@ -279,6 +292,10 @@ p:has(+ .reference-item) {
 
     p {
         margin-bottom: 0.3em;
+    }
+
+    code {
+        font-family: FreeMono, monospace;
     }
 
     .contact-list {
@@ -300,6 +317,10 @@ p:has(+ .reference-item) {
 
     h1 {
         font-size: 2em;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: "Liberation Mono", Cousine, Consolas, monospace;
     }
 
     h1+.contact-list {
@@ -329,7 +350,6 @@ p:has(+ .reference-item) {
         margin-top: 0.9em;
     }
 
-    /* Hide descriptions for print-compact jobs and style them inline */
     .print-compact .reference-item {
         display: none;
     }
@@ -403,7 +423,7 @@ p:has(+ .reference-item) {
                     <code>Presentations: <a href="https://alonsosilvaallende.github.io/automata-guided-generation">Structured code generation for domain-specific languages</a></code>
                 </p>
                 <div class="reference-item">
-                    <p>Defined Project Octopus, a centralized project space for inner-sourcing NLP solutions across the company — Designed a PGRX based RAG architecture using fastembed and pgvector, chunking / embedding / retrieval in a single DB process — Designed an internal data warehouse project built on a swarm of independent Go microservices processing noisy data from multiply sources, with a provider-agnostic interface architecture to support any embedding model, any vector database and any LLM frontend — Designed a reusable TF-IDF library for validation and embedding — Designed concurrent K8s log stream orchestration into tape archives — Designed HTTP transport capture / replay middleware — Conducted research for <b>Bell Labs</b> on predictor machines, exploring how to enforce grammar and semantics on DSLs.</p>
+                    <p>Defined Project Octopus, a centralized project space for inner-sourcing NLP solutions across the company — Designed a PGRX-based RAG architecture (in Rust) using fastembed and pgvector, embedding chunking and retrieval directly into PostgreSQL to minimize communication latency — Designed a reusable TF-IDF library for validation and embedding — Designed an internal data warehouse on PostgreSQL backed by a fleet of independent Go microservices that ingest and normalize noisy data from multiple sources (Jira, Confluence, GitLab, Zendesk), featuring a provider-agnostic interface layer supporting any embedding model, vector database or LLM frontend — Designed concurrent K8s log stream orchestration into tape archives — Designed HTTP transport capture / replay middleware — Conducted research for <b>Bell Labs</b> on predictor machines, exploring how to enforce grammar and semantics on DSLs.</p>
                 </div>
             </div>
             <div class="item">
